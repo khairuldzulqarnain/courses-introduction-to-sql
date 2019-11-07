@@ -84,7 +84,6 @@ SELECT name FROM people;
 
 Who is the second person listed in the query result?
 
-
 `@possible_answers`
 - Kanye West
 - A. Michael Baldwin
