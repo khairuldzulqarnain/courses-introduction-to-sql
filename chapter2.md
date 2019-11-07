@@ -221,13 +221,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+check_all_columns().has_equal_value()
 
 Ex().success_msg("Great job! After filtering of numeric values, it's time to explore filtering of text!")
 ```
@@ -353,13 +347,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "birthdate, name")
-    )
-)
+check_all_columns().has_equal_value()
 ```
 
 ***
@@ -542,13 +530,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -798,14 +780,7 @@ Ex().check_correct(
     )
 )
 
-# Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -859,13 +834,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -922,13 +891,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+check_all_columns().has_equal_value()
 
 Ex().success_msg("That was pretty involved!")
 ```
@@ -1048,9 +1011,12 @@ WHERE release_year BETWEEN 1990 AND 2000;
 Ex().check_correct(
     has_nrows(),
     check_node('SelectStmt').multi(
+      	check_edge('target_list', 0).has_equal_ast(),
+      	check_edge('target_list', 1).has_equal_ast(),
         check_edge('from_clause').has_equal_ast(),
         check_edge('where_clause').multi(
             check_edge('left').has_equal_ast(),
+          	check_edge('op').has_equal_ast(),
             check_edge('right', 0).has_equal_ast(),
             check_edge('right', 1).has_equal_ast()
         )
@@ -1058,13 +1024,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1105,19 +1065,29 @@ AND budget > 100000000;
 Ex().check_correct(
     has_nrows(),
     check_node('SelectStmt').multi(
+      	check_edge('target_list', 0).has_equal_ast(),
+      	check_edge('target_list', 1).has_equal_ast(),
         check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast(sql='budget > 100000000')
+        check_edge('where_clause').multi(
+        	check_edge('left').multi(
+            	check_edge('left').has_equal_ast(),
+                check_edge('op').has_equal_ast(),
+                check_edge('right', 0).multi(
+                	check_edge('left').has_equal_ast(),
+                    check_edge('op').has_equal_ast(),
+                    check_edge('right').has_equal_ast()
+                ),
+              	check_edge('right', 1).has_equal_ast()
+            ),
+          	check_edge('op').has_equal_ast(),
+          	check_edge('right').has_equal_ast()
+        )
     )
 )
 
+
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1160,19 +1130,36 @@ AND language = 'Spanish';
 Ex().check_correct(
     has_nrows(),
     check_node('SelectStmt').multi(
+      	check_edge('target_list', 0).has_equal_ast(),
+      	check_edge('target_list', 1).has_equal_ast(),
         check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast(sql="language = 'Spanish'")
+        check_edge('where_clause').multi(
+        	check_edge('left').multi(
+            	check_edge('left').has_equal_ast(),
+                check_edge('op').has_equal_ast(),
+                check_edge('right', 0).multi(
+                	check_edge('left').multi(
+                      	check_edge('left').has_equal_ast(),
+                        check_edge('op').has_equal_ast(),
+                        check_edge('right').has_equal_ast()
+                    ),
+                    check_edge('op').has_equal_ast(),
+                    check_edge('right').multi(
+                    	check_edge('left').has_equal_ast(),
+                        check_edge('op').has_equal_ast(),
+                        check_edge('right').has_equal_ast()
+                    )
+                ),
+              	check_edge('right', 1).has_equal_ast()
+            ),
+          	check_edge('op').has_equal_ast(),
+          	check_edge('right').has_equal_ast()
+        )
     )
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1213,21 +1200,46 @@ AND (language = 'Spanish' OR language = 'French');
 ```{python}
 # First check if the WHERE clause was correct
 Ex().check_correct(
-    has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').has_equal_ast(sql="language = 'French'")
+  has_nrows(),
+  check_node('SelectStmt').multi(
+    check_edge('target_list', 0).has_equal_ast(),
+    check_edge('target_list', 1).has_equal_ast(),
+    check_edge('from_clause').has_equal_ast(),
+    check_edge('where_clause').multi(
+      check_edge('left').has_equal_ast(),
+      check_edge('op').has_equal_ast(),
+      check_edge('right', 0).multi(
+        check_edge('left').multi(
+          check_edge('left').has_equal_ast(),
+          check_edge('op').has_equal_ast(),
+          check_edge('right').has_equal_ast()
+        ),
+        check_edge('op').has_equal_ast(),
+        check_edge('right').multi(
+          check_edge('left').has_equal_ast(),
+          check_edge('op').has_equal_ast(),
+          check_edge('right').has_equal_ast()
+        )
+      ),
+      check_edge('right', 1).check_node("BinaryExpr").multi(
+        check_edge('left').multi(
+          check_edge('left').has_equal_ast(),
+          check_edge('op').has_equal_ast(),
+          check_edge('right', 0).has_equal_ast()
+        ),
+        check_edge('op').has_equal_ast(),
+        check_edge('right').multi(
+          check_edge('left').has_equal_ast(),
+          check_edge('op').has_equal_ast(),
+          check_edge('right', 0).has_equal_ast()
+        )
+      )
     )
+  )
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 
 Ex().success_msg("Well done! Off to the next filtering operator!")
 ```
@@ -1320,13 +1332,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "release_year, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1371,13 +1377,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "language, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1422,13 +1422,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').check_or(
-        has_equal_ast(),
-        has_equal_ast(sql = "certification, title")
-    )
-)
+Ex().check_all_columns().has_equal_value()
 
 Ex().success_msg("Your SQL vocabulary is growing by the minute!")
 ```
@@ -1543,10 +1537,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1591,10 +1582,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1725,10 +1713,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
+check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1773,10 +1758,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
+Ex().check_all_columns().has_equal_value()
 ```
 
 ***
@@ -1821,10 +1803,7 @@ Ex().check_correct(
 )
 
 # Next check if right columns were included
-Ex().check_correct(
-    check_all_columns().has_equal_value(),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
+Ex().check_all_columns().has_equal_value()
 
 Ex().success_msg("This concludes the second chapter of the intro to SQL course. Rush over to chapter 3 if you want to learn more about aggregate functions!")
 ```

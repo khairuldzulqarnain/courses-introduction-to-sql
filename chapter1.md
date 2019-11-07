@@ -1,6 +1,9 @@
 ---
 title: 'Selecting columns'
-description: 'This chapter provides a brief introduction to working with relational databases. You''ll learn about their structure, how to talk about them using database lingo, and how to begin an analysis by using simple SQL commands to select and summarize columns from database tables.'
+description: 'This chapter provides a brief introduction to working with relational databases. You''ll learn about their structure, how to talk about them using database lingo, and how to begin an analysis using simple SQL commands to select and summarize columns from database tables.'
+free_preview: true
+attachments:
+    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1946/slides/chapter1.pdf'
 ---
 
 ## Welcome to the course!
@@ -72,11 +75,15 @@ skills: 1
 
 Notice the **query result** tab in the bottom right corner of your screen. This is where the results of your SQL queries will be displayed.
 
-Run the query in the editor and check out the resulting table in the query result tab!
+Run this query in the editor and check out the resulting table in the query result tab!
 
-<hr>
+```{sql}
+SELECT name FROM people;
+```
+
 
 Who is the second person listed in the query result?
+
 
 `@possible_answers`
 - Kanye West
@@ -115,6 +122,7 @@ skills: 1
 ```
 
 If you submit the code to the right, you'll see that you get two types of errors.
+
 
 _SQL_ errors are shown below the editor. These are errors returned by the _SQL_ engine. You should see:
 
@@ -155,7 +163,7 @@ AS result;
 
 `@sct`
 ```{sql}
-Ex().has_code(r'SELECT|select', incorrect_msg="Alright, now go ahead and fix your code by including a `SELECT`.")
+Ex().has_code(r'SELECT|select|Select', incorrect_msg="Alright, now go ahead and fix your code by including a `SELECT`.")
 
 Ex().check_column('result').has_equal_value()
 

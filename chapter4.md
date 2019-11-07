@@ -484,10 +484,7 @@ ORDER BY title DESC;
 `@sct`
 ```{python}
 # Check if all required columns included
-Ex().check_correct(
-    check_column('title'),
-    check_node('SelectStmt').check_edge('target_list').has_equal_ast()
-)
+Ex().check_column('title')
 
 # Check if order is correct
 Ex().check_correct(
