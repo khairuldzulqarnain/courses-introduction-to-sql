@@ -1,6 +1,6 @@
 ---
-title: 'Sorting, grouping and joins'
-description: 'This chapter provides a brief introduction to sorting and grouping your results, and briefly touches on the concept of joins.'
+title: 'Sorting and grouping'
+description: 'This chapter provides a brief introduction to sorting and grouping your results.'
 ---
 
 ## ORDER BY
@@ -1354,7 +1354,7 @@ set_options(visible_tables = ['films'])
 ```yaml
 type: NormalExercise
 key: a141cd669f
-xp: 20
+xp: 16
 ```
 
 `@instructions`
@@ -1387,7 +1387,7 @@ Ex().check_all_columns(allow_extra=False).has_equal_value()
 ```yaml
 type: NormalExercise
 key: d80bd57b13
-xp: 20
+xp: 16
 ```
 
 `@instructions`
@@ -1429,7 +1429,7 @@ Ex().check_all_columns(allow_extra=False).has_equal_value()
 ```yaml
 type: NormalExercise
 key: 2d5e6bd8cf
-xp: 20
+xp: 17
 ```
 
 `@instructions`
@@ -1476,7 +1476,7 @@ Ex().check_all_columns(allow_extra=False).has_equal_value()
 ```yaml
 type: NormalExercise
 key: ee92d8cbaa
-xp: 20
+xp: 17
 ```
 
 `@instructions`
@@ -1537,7 +1537,7 @@ Ex().check_correct(
 ```yaml
 type: NormalExercise
 key: ce0f248734
-xp: 20
+xp: 17
 ```
 
 `@instructions`
@@ -1591,6 +1591,7 @@ Ex().check_correct(
 ```yaml
 type: NormalExercise
 key: 7b3afeed2f
+xp: 17
 ```
 
 `@instructions`
