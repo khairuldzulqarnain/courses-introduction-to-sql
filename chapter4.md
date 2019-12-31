@@ -1828,7 +1828,7 @@ xp: 50
 ```
 
 `@question`
-
+What is the IMDB score for the film _To Kill a Mockingbird_?
 
 `@sample_code`
 ```{sql}
