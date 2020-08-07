@@ -757,11 +757,13 @@ GROUP BY sex;
 
 This might give, for example:
 
-| sex | count |
-|----|----|
-| male | 15 |
-| female | 19 |
+```out
+| sex    | count |
+|--------|-------|
+| male   | 15    |
+| female | 19    |
 
+```
 <br>
 Commonly, `GROUP BY` is used with _aggregate functions_ like `COUNT()` or `MAX()`. Note that `GROUP BY` always goes after the `FROM` clause!
 
