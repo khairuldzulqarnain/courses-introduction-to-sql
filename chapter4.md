@@ -809,10 +809,12 @@ ORDER BY count DESC;
 
 might return something like
 
-| sex | count |
-|----|----|
-| female | 19 |
-| male | 15 |
+```out
+| sex    | count |
+|--------|-------|
+| female | 19    |
+| male   | 15    |
+```
 
 <br>
 because there are more females at our company than males. Note also that `ORDER BY` always goes after `GROUP BY`. Let's try some exercises!

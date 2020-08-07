@@ -309,12 +309,14 @@ Each row, or *record*, of a table contains information about a single entity. Fo
 
 The table of employees might look something like this:
 
-| id | name | age | nationality |
-|----|----|----|----|
-| 1 | Jessica | 22 | Ireland
-| 2 | Gabriel | 48 | France |
-| 3 | Laura | 36 | USA |
+```out
+| id | name    | age | nationality |
+|----|---------|-----|-------------|
+| 1  | Jessica | 22  | Ireland     |
+| 2  | Gabriel | 48  | France      |
+| 3  | Laura   | 36  | USA         |
 
+```
 <hr>
 
 How many fields does the employees table above contain?
