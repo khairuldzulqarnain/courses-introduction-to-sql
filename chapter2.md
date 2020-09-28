@@ -1022,7 +1022,7 @@ Ex().check_correct(
       	check_edge('target_list', 1).has_equal_ast(),
         check_edge('from_clause').has_equal_ast(),
         check_edge('where_clause').multi(
-            check_edge('left').has_equal_ast(),
+            check_edge('left').has_equal_ast(incorrect_msg = "Check the`WHERE` statement. Did you get the films released `BETWEEN` 1990 and 2000? No other conditions are necessary at this step."),
           	check_edge('op').has_equal_ast(),
             check_edge('right', 0).has_equal_ast(),
             check_edge('right', 1).has_equal_ast()
@@ -1087,10 +1087,10 @@ Ex().check_correct(
                     check_edge('op').has_equal_ast(),
                     check_edge('right').has_equal_ast()
                 ),
-              	check_edge('right', 1).has_equal_ast()
+              	check_edge('right', 1).has_equal_ast(incorrect_msg = 'Check the column in `WHERE` statement. Are you correctly selecting the films with `budget` over $100 mil?')
             ),
           	check_edge('op').has_equal_ast(),
-          	check_edge('right').has_equal_ast()
+          	check_edge('right').has_equal_ast(incorrect_msg="Did you specify the minimal budget to be `100000000` (with _8_ zeros)?")
         )
     )
 )
@@ -1153,7 +1153,7 @@ Ex().check_correct(
                 check_edge('op').has_equal_ast(),
                 check_edge('right', 0).multi(
                 	check_edge('left').multi(
-                      	check_edge('left').has_equal_ast(),
+                      	check_edge('left',missing_msg = "Check your `WHERE` statement. It should contain 3 conditions: on release year, budget, and language. ").has_equal_ast(),
                         check_edge('op').has_equal_ast(),
                         check_edge('right').has_equal_ast()
                     ),
@@ -1224,6 +1224,19 @@ Ex().check_correct(
     check_edge('target_list', 1).has_equal_ast(),
     check_edge('from_clause').has_equal_ast(),
     check_edge('where_clause').multi(
+      check_edge('right', 1, missing_msg="Check the conditions of the `WHERE` statement. Did you remember to use parentheses?").check_node("BinaryExpr", missing_msg="Check the conditions of the `WHERE` statement. Did you remember to use parentheses?").multi(
+        check_edge('left').multi(
+          check_edge('left').has_equal_ast(),
+          check_edge('op').has_equal_ast(),
+          check_edge('right', 0).has_equal_ast()
+        ),
+        check_edge('op').has_equal_ast(),
+        check_edge('right').multi(
+          check_edge('left').has_equal_ast(),
+          check_edge('op').has_equal_ast(),
+          check_edge('right', 0).has_equal_ast()
+        )
+      ),      
       check_edge('left').has_equal_ast(),
       check_edge('op').has_equal_ast(),
       check_edge('right', 0).multi(
@@ -1238,20 +1251,8 @@ Ex().check_correct(
           check_edge('op').has_equal_ast(),
           check_edge('right').has_equal_ast()
         )
-      ),
-      check_edge('right', 1).check_node("BinaryExpr").multi(
-        check_edge('left').multi(
-          check_edge('left').has_equal_ast(),
-          check_edge('op').has_equal_ast(),
-          check_edge('right', 0).has_equal_ast()
-        ),
-        check_edge('op').has_equal_ast(),
-        check_edge('right').multi(
-          check_edge('left').has_equal_ast(),
-          check_edge('op').has_equal_ast(),
-          check_edge('right', 0).has_equal_ast()
-        )
       )
+
     )
   )
 )
@@ -1339,18 +1340,35 @@ AND duration > 120;
 ```{python}
 # First check if the WHERE clause was correct
 Ex().check_correct(
+   multi(
     has_nrows(),
-    check_node('SelectStmt').multi(
-        check_edge('from_clause').has_equal_ast(),
-        check_edge('where_clause').multi(
-            check_edge('left').has_equal_ast(),
-            check_edge('right').has_equal_ast()
-        )
-    )
+    check_all_columns().has_equal_value()
+   ),  
+    check_edge("body", 0).multi(
+      multi(
+          check_edge("target_list", 0).check_edge("fields", 0).has_equal_ast(),
+          check_edge("target_list", 1).check_edge("fields", 0).has_equal_ast(),
+      ),
+      check_edge("from_clause", 0).check_edge("fields", 0).has_equal_ast(),
+      check_edge("where_clause").multi(
+          check_edge("left").multi(
+              check_edge("left", missing_msg="Check your `WHERE` statement. In should have 2 conditions: on the release year and on the film's duration.").check_edge("fields", 0).has_equal_ast(),
+              check_edge("op").has_equal_ast(incorrect_msg="Did you use the `IN` operator to find films released in 1990 or 2000?"),
+              multi(
+                  check_edge("right", 0).has_equal_ast(),
+                  check_edge("right", 1).has_equal_ast(),
+              ),
+          ),
+          check_edge("op").has_equal_ast(),
+          check_edge("right").multi(
+              check_edge("left").check_edge("fields", 0).has_equal_ast(),
+              check_edge("op").has_equal_ast(),
+              check_edge("right").has_equal_ast(),
+          ),
+      ),
+  )
 )
 
-# Next check if right columns were included
-Ex().check_all_columns().has_equal_value()
 ```
 
 ***
