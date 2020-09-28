@@ -804,7 +804,10 @@ AND (___ = 'French' OR ___ = 'Spanish');
 
 `@sample_code`
 ```{sql}
-
+SELECT title, release_year
+FROM films
+WHERE (release_year >= 1990 AND release_year < 2000)
+___
 ```
 
 `@solution`
@@ -859,7 +862,11 @@ AND ___ > ___;
 
 `@sample_code`
 ```{sql}
-
+SELECT title, release_year
+FROM films
+WHERE (release_year >= 1990 AND release_year < 2000)
+AND (language = 'French' OR language = 'Spanish')
+___
 ```
 
 `@solution`
@@ -1048,7 +1055,10 @@ AND ___ > ___;
 
 `@sample_code`
 ```{sql}
-
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+___
 ```
 
 `@solution`
@@ -1112,7 +1122,11 @@ AND ___ = '___';
 
 `@sample_code`
 ```{sql}
-
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+AND budget > 100000000
+___
 ```
 
 `@solution`
@@ -1184,7 +1198,11 @@ AND (___ = '___' OR ___ = '___');
 
 `@sample_code`
 ```{sql}
-
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+AND budget > 100000000
+AND language = 'Spanish';
 ```
 
 `@solution`
