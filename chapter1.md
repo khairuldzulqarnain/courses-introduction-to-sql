@@ -73,9 +73,9 @@ xp: 50
 skills: 1
 ```
 
-Notice the **Query** and the **Result** tabs at the top of your screen. The **Query** tab contains the query editor that you will use to write the code. The results of your SQL queries will be displayed in the **Result**
+Notice the **Query** and the **Result** tabs at the top of your screen. The **Query** tab contains the query editor that you will use to write the code. The results of your SQL queries will be displayed in the **Result** tab.
 
-Type this query in the editor in the **Query** tab, tap **Run Code**, and check out the resulting table in the **Result** tab!
+Type this query in the editor in the **Query** tab, thdn tap **Run Code**, and check out the resulting table in the **Result** tab!
 
 ```{sql}
 SELECT name FROM people;
@@ -119,7 +119,7 @@ xp: 100
 skills: 1
 ```
 
-If you submit the code in the **Query** tab, you'll see that you get two types of errors.
+If you submit the code that's written in the **Query** tab, you'll see that you get two types of errors.
 
 
 _SQL_ errors are shown in the **Result** tab. These are errors returned by the _SQL engine_. You should see:
@@ -161,7 +161,7 @@ AS result;
 
 `@sct`
 ```{sql}
-Ex().has_code(r'SELECT|select|Select', incorrect_msg="Alright, now go ahead and fix your code by including a `SELECT`.")
+Ex().has_code(r'SELECT|select|Select', incorrect_msg="Alright, now go ahead and fix your code by including a `SELECT` before `'DataCamp <3 SQL'`.")
 
 Ex().check_column('result').has_equal_value()
 
