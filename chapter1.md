@@ -262,7 +262,7 @@ xp: 30
 ```
 
 `@instructions`
-Finally, change `'SQL is'` to `'SQL is cool!'` and click Submit!
+Finally, change `'SQL is'` to `'SQL is cool'` and click Submit!
 
 `@hint`
 Change the code and submit the query!
@@ -275,7 +275,7 @@ AS result;
 
 `@solution`
 ```{sql}
-SELECT 'SQL is cool!'
+SELECT 'SQL is cool'
 AS result;
 ```
 
@@ -283,7 +283,7 @@ AS result;
 ```{sql}
 Ex().check_correct(
     check_column('result').has_equal_value(),
-    has_code('SQL is cool!', incorrect_msg="Did you change `'SQL is'` to `'SQL is cool!'`?", fixed=True)
+    has_code('SQL is cool', incorrect_msg="Did you change `'SQL is'` to `'SQL is cool'`?", fixed=True)
 )
 Ex().success_msg("Well done! The time has come to actually fetch information from tables now!")
 ```
@@ -365,7 +365,7 @@ That said, it's good practice to make SQL keywords uppercase to distinguish them
 
 It's also good practice (but not necessary for the exercises in this course) to include a semicolon at the end of your query. This tells SQL where the end of your query is!
 
-Remember, you can see the results of executing your query in the __query result__ tab to the right!
+Remember, you can see the results of executing your query in the __query__ tab!
 
 `@pre_exercise_code`
 ```{python}
@@ -527,7 +527,7 @@ FROM people
 LIMIT 10;
 ```
 
-Before getting started with the instructions below, check out the column names in the `films` table by clicking on the `films` tab to the right!
+Before getting started with the instructions below, check out the column names in the `films` table!
 
 `@pre_exercise_code`
 ```{python}
@@ -724,7 +724,7 @@ SELECT DISTINCT language
 FROM films;
 ```
 
-Remember, you can check out the data in the tables by clicking on the tabs to the right under the editor!
+Remember, you can check out the data in the tables by clicking on the table name!
 
 `@pre_exercise_code`
 ```{python}
