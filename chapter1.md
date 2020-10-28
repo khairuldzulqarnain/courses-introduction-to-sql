@@ -75,7 +75,7 @@ skills: 1
 
 Notice the **Query** and the **Result** tabs at the top of your screen. The **Query** tab contains the query editor that you will use to write the code. The results of your SQL queries will be displayed in the **Result** tab.
 
-Type this query in the editor in the **Query** tab, thdn tap **Run Code**, and check out the resulting table in the **Result** tab!
+Type this query in the editor in the **Query** tab, then tap **Run Code**, and check out the resulting table in the **Result** tab!
 
 ```{sql}
 SELECT name FROM people;
