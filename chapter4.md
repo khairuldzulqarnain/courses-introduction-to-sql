@@ -1406,7 +1406,8 @@ WHERE ___ > ___;
 
 `@sample_code`
 ```{sql}
-
+SELECT release_year, budget, gross
+FROM films;
 ```
 
 `@solution`
@@ -1449,7 +1450,9 @@ GROUP BY ___;
 
 `@sample_code`
 ```{sql}
-
+SELECT release_year
+FROM films
+WHERE release_year > 1990;
 ```
 
 `@solution`
@@ -1488,7 +1491,8 @@ Modify your query to include the average budget and average gross earnings for t
 
 `@hint`
 ```
-SELECT ___, ___(___) AS avg_budget, AVG(gross) AS avg_gross
+SELECT ___, ___(___) AS avg_budget, 
+       AVG(gross) AS avg_gross
 FROM ___
 WHERE ___ > ___
 GROUP BY ___;
@@ -1496,7 +1500,10 @@ GROUP BY ___;
 
 `@sample_code`
 ```{sql}
-
+SELECT release_year,
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
 ```
 
 `@solution`
@@ -1558,7 +1565,10 @@ HAVING AVG(___) > 60000000;
 
 `@sample_code`
 ```{sql}
-
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
 ```
 
 `@solution`
@@ -1613,7 +1623,11 @@ ORDER BY ___ DESC;
 
 `@sample_code`
 ```{sql}
-
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000;
 ```
 
 `@solution`
@@ -1675,7 +1689,8 @@ Get the country, average budget, and average gross take of countries that have m
 
 `@hint`
 ```
-SELECT ___, AVG(budget) AS avg_budget, ___(gross) AS avg_gross
+SELECT ___, AVG(budget) AS avg_budget, 
+       ___(gross) AS avg_gross
 FROM films
 GROUP BY ___
 HAVING COUNT(title) > 10
@@ -1691,7 +1706,8 @@ set_options(visible_tables = ['films'])
 
 `@sample_code`
 ```{sql}
--- select country, average budget, average gross
+-- select country, average budget, 
+--     and average gross
 
 -- from the films table
 
@@ -1706,8 +1722,10 @@ set_options(visible_tables = ['films'])
 
 `@solution`
 ```{sql}
--- select country, average budget, average gross
-SELECT country, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+-- select country, average budget, 
+-- and average gross
+SELECT country, AVG(budget) AS avg_budget, 
+       AVG(gross) AS avg_gross
 -- from the films table
 FROM films
 -- group by country 

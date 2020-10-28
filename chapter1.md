@@ -33,9 +33,9 @@ skills: 1
 
 If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of.
 
-For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
+For this course, you'll be using a database containing information on almost 5000 films. At the top of the screen, above the exercise text, you can see the data in this database by tapping on the table names. 
 
-From looking at the tabs, who is the first person listed in the `people` table?
+From looking at the table, who is the first person listed in the `people` table?
 
 `@possible_answers`
 - Kanye West
@@ -44,7 +44,7 @@ From looking at the tabs, who is the first person listed in the `people` table?
 - Jay Z
 
 `@hint`
-Look at the `people` tab under the editor!
+Look at the `people` table at the top of the exercise!
 
 `@pre_exercise_code`
 ```{python}
@@ -73,14 +73,13 @@ xp: 50
 skills: 1
 ```
 
-Notice the **query result** tab in the bottom right corner of your screen. This is where the results of your SQL queries will be displayed.
+Notice the **Query** and the **Result** tabs at the top of your screen. The **Query** tab contains the query editor that you will use to write the code. The results of your SQL queries will be displayed in the **Result** tab.
 
-Run this query in the editor and check out the resulting table in the query result tab!
+Type this query in the editor in the **Query** tab, then tap **Run Code**, and check out the resulting table in the **Result** tab!
 
 ```{sql}
 SELECT name FROM people;
 ```
-
 
 Who is the second person listed in the query result?
 
@@ -91,7 +90,7 @@ Who is the second person listed in the query result?
 - Jay Z
 
 `@hint`
-Run the code in the editor and look at the query result tab under the editor!
+Run the code in the editor and look at the result tab at the top of the screen!
 
 `@pre_exercise_code`
 ```{python}
@@ -120,23 +119,23 @@ xp: 100
 skills: 1
 ```
 
-If you submit the code to the right, you'll see that you get two types of errors.
+If you submit the code that's written in the **Query** tab, you'll see that you get two types of errors.
 
 
-_SQL_ errors are shown below the editor. These are errors returned by the _SQL_ engine. You should see:
+_SQL_ errors are shown in the **Result** tab. These are errors returned by the _SQL engine_. You should see:
 
 ```
 syntax error at or near "'DataCamp <3 SQL'" LINE 2: 'DataCamp <3 SQL' ^
 ```
 <br>
-_DataCamp_ errors are shown in the **Instructions** box. These will let you know in plain English where you went wrong in your code! You should see:
+_DataCamp_ errors are shown in the **Incorrect submission** box. These will let you know in plain English where you went wrong in your code! You should see:
 
 ```
-You need to add SELECT at the start of line 2!
+Alright, now go ahead and fix your code by including a `SELECT`.
 ```
 
 `@instructions`
-Submit the code to the right, check out the errors, then fix them!
+Submit the code below, check out the errors, then fix them!
 
 `@hint`
 In the editor, change line 2 to `SELECT 'DataCamp <3 SQL'`.
@@ -162,7 +161,7 @@ AS result;
 
 `@sct`
 ```{sql}
-Ex().has_code(r'SELECT|select|Select', incorrect_msg="Alright, now go ahead and fix your code by including a `SELECT`.")
+Ex().has_code(r'SELECT|select|Select', incorrect_msg="Alright, now go ahead and fix your code by including a `SELECT` before `'DataCamp <3 SQL'`.")
 
 Ex().check_column('result').has_equal_value()
 
@@ -181,7 +180,7 @@ xp: 100
 skills: 1
 ```
 
-Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
+Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out!
 
 `@pre_exercise_code`
 ```{python}
@@ -262,7 +261,7 @@ xp: 30
 ```
 
 `@instructions`
-Finally, change `'SQL is'` to `'SQL is cool!'` and click Submit!
+Finally, change `'SQL is'` to `'SQL is cool'` and click Submit!
 
 `@hint`
 Change the code and submit the query!
@@ -275,7 +274,7 @@ AS result;
 
 `@solution`
 ```{sql}
-SELECT 'SQL is cool!'
+SELECT 'SQL is cool'
 AS result;
 ```
 
@@ -283,7 +282,7 @@ AS result;
 ```{sql}
 Ex().check_correct(
     check_column('result').has_equal_value(),
-    has_code('SQL is cool!', incorrect_msg="Did you change `'SQL is'` to `'SQL is cool!'`?", fixed=True)
+    has_code('SQL is cool', incorrect_msg="Did you change `'SQL is'` to `'SQL is cool'`?", fixed=True)
 )
 Ex().success_msg("Well done! The time has come to actually fetch information from tables now!")
 ```
@@ -367,7 +366,7 @@ That said, it's good practice to make SQL keywords uppercase to distinguish them
 
 It's also good practice (but not necessary for the exercises in this course) to include a semicolon at the end of your query. This tells SQL where the end of your query is!
 
-Remember, you can see the results of executing your query in the __query result__ tab to the right!
+Remember, you can see the results of executing your query in the __query__ tab!
 
 `@pre_exercise_code`
 ```{python}
@@ -529,7 +528,7 @@ FROM people
 LIMIT 10;
 ```
 
-Before getting started with the instructions below, check out the column names in the `films` table by clicking on the `films` tab to the right!
+Before getting started with the instructions below, check out the column names in the `films` table!
 
 `@pre_exercise_code`
 ```{python}
@@ -726,7 +725,7 @@ SELECT DISTINCT language
 FROM films;
 ```
 
-Remember, you can check out the data in the tables by clicking on the tabs to the right under the editor!
+Remember, you can check out the data in the tables by clicking on the table name!
 
 `@pre_exercise_code`
 ```{python}
