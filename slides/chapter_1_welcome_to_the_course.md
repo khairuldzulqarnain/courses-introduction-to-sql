@@ -1,12 +1,13 @@
 ---
-title: 'Welcome to the course!'
+title: Welcome to the course!
 key: f05d06ad7807cf476fdb5f674174c9d5
 video_link:
-    hls: 'https://videos.datacamp.com/transcoded/1946_intro-to-sql/v1/hls-ch1_1.master.m3u8'
-    mp4: 'https://videos.datacamp.com/transcoded_mp4/1946_intro-to-sql/v1/ch1_1.mp4'
+  hls: >-
+    https://videos.datacamp.com/transcoded/1946_intro-to-sql/v1/hls-ch1_1.master.m3u8
+  mp4: 'https://videos.datacamp.com/transcoded_mp4/1946_intro-to-sql/v1/ch1_1.mp4'
 transformations:
-    translateX: 55
-    translateY: 0
+  translateX: 55
+  translateY: 0
 ---
 
 ## Welcome to the course!
