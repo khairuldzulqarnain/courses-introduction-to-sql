@@ -180,7 +180,7 @@ Ex().success_msg("Excellent error editing! You can feel safe experimenting with 
 
 ---
 
-## Onboarding | Iterative Exercises
+## Onboarding | Multi-step Exercises
 
 ```yaml
 type: BulletExercise
@@ -191,7 +191,7 @@ skills:
   - 1
 ```
 
-Another new feature we're introducing is the *iterative exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
+The following multi-step exercise allows you to practice a new concept through repetition. Check it out below!
 
 `@pre_exercise_code`
 ```{python}
