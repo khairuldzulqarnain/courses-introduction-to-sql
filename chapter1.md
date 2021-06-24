@@ -879,7 +879,7 @@ lang: sql
 xp: 50
 ```
 
-What if you want to count the number of employees in your employees table? The `COUNT` statement lets you do this by returning the number of rows in one or more columns.
+What if you want to count the number of employees in your employees table? The `COUNT()` function lets you do this by returning the number of rows in one or more columns.
 
 For example, this code gives the number of rows in the `people` table:
 
@@ -924,7 +924,7 @@ lang: sql
 xp: 100
 ```
 
-As you've seen, `COUNT(*)` tells you how many rows are in a table. However, if you want to count the number of *non-missing* values in a particular column, you can call `COUNT` on just that column.
+As you've seen, `COUNT(*)` tells you how many rows are in a table. However, if you want to count the number of *non-missing* values in a particular column, you can call `COUNT()` on just that column.
 
 For example, to count the number of birth dates present in the `people` table:
 
@@ -933,7 +933,7 @@ SELECT COUNT(birthdate)
 FROM people;
 ```
 
-It's also common to combine `COUNT` with `DISTINCT` to count the number of *distinct* values in a column.
+It's also common to combine `COUNT()` with `DISTINCT` to count the number of *distinct* values in a column.
 
 For example, this query counts the number of distinct birth dates contained in the `people` table:
 
@@ -942,7 +942,7 @@ SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
 
-Let's get some practice with `COUNT`!
+Let's get some practice with `COUNT()`!
 
 `@pre_exercise_code`
 ```{python}
