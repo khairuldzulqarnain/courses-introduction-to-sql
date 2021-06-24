@@ -1,9 +1,14 @@
 ---
-title: 'Selecting columns'
-description: 'This chapter provides a brief introduction to working with relational databases. You''ll learn about their structure, how to talk about them using database lingo, and how to begin an analysis using simple SQL commands to select and summarize columns from database tables.'
+title: Selecting columns
+description: >-
+  This chapter provides a brief introduction to working with relational
+  databases. You'll learn about their structure, how to talk about them using
+  database lingo, and how to begin an analysis using simple SQL commands to
+  select and summarize columns from database tables.
 free_preview: true
 attachments:
-    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1946/slides/chapter1.pdf'
+  slides_link: >-
+    https://s3.amazonaws.com/assets.datacamp.com/production/course_1946/slides/chapter1.pdf
 ---
 
 ## Welcome to the course!
@@ -13,7 +18,8 @@ type: VideoExercise
 key: dcdbb24914
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 `@projector_key`
@@ -28,7 +34,8 @@ type: MultipleChoiceExercise
 key: e456699517
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of.
@@ -70,7 +77,8 @@ type: MultipleChoiceExercise
 key: 5314676aac
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 Notice the **query result** tab in the bottom right corner of your screen. This is where the results of your SQL queries will be displayed.
@@ -117,7 +125,8 @@ type: NormalExercise
 key: 7d7e325a12
 lang: sql
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 If you submit the code to the right, you'll see that you get two types of errors.
@@ -178,7 +187,8 @@ type: BulletExercise
 key: 81eb00a53d
 lang: sql
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!

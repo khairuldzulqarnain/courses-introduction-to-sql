@@ -1,6 +1,9 @@
 ---
-title: 'Aggregate Functions'
-description: 'This chapter teaches you how to use aggregate functions to summarize data and gain useful insights. You''ll also learn about arithmetic in SQL and how to use aliases to make your results more readable.'
+title: Aggregate Functions
+description: >-
+  This chapter teaches you how to use aggregate functions to summarize data and
+  gain useful insights. You'll also learn about arithmetic in SQL and how to use
+  aliases to make your results more readable.
 ---
 
 ## Aggregate functions
@@ -598,7 +601,8 @@ type: MultipleChoiceExercise
 key: 7b8b54b64d
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 In addition to using aggregate functions, you can perform basic arithmetic with symbols like `+`, `-`, `*`, and `/`.
