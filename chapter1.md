@@ -40,9 +40,9 @@ skills:
 
 The DataCamp interface for SQL courses contains a few unique features you should be aware of. 
 
-For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
+For this course, you'll be using a database containing information on almost 5000 films. At the top of the screen, above the exercise text, you can see the data in this database by tapping on the table names. 
 
-From looking at the tabs, who is the first person listed in the `people` table?
+From looking at the table, who is the first person listed in the `people` table?
 
 `@possible_answers`
 - Kanye West
