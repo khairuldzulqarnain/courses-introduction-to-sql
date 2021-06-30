@@ -191,7 +191,7 @@ skills:
   - 1
 ```
 
-The following multi-step exercise allows you to practice a new concept through repetition. Check it out below!
+The following multi-step exercise allows you to practice a new concept through repetition. 
 
 `@pre_exercise_code`
 ```{python}
