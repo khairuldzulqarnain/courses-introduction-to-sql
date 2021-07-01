@@ -38,7 +38,7 @@ skills:
   - 1
 ```
 
-The DataCamp interface for SQL courses contains a few unique features you should be aware of. 
+The DataCamp interface for SQL courses contains a few unique features you should be aware of.
 
 For this course, you'll be using a database containing information on almost 5000 films. At the top of the screen, above the exercise text, you can see the data in this database by tapping on the table names. 
 
