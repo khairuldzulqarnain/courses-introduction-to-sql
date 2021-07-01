@@ -1,6 +1,9 @@
 ---
-title: 'Aggregate Functions'
-description: 'This chapter teaches you how to use aggregate functions to summarize data and gain useful insights. You''ll also learn about arithmetic in SQL and how to use aliases to make your results more readable.'
+title: Aggregate Functions
+description: >-
+  This chapter teaches you how to use aggregate functions to summarize data and
+  gain useful insights. You'll also learn about arithmetic in SQL and how to use
+  aliases to make your results more readable.
 ---
 
 ## Aggregate functions
@@ -21,21 +24,21 @@ SELECT AVG(budget)
 FROM films;
 ```
 
-gives you the average value from the `budget` column of the `films` table. Similarly, the `MAX` function returns the highest budget:
+gives you the average value from the `budget` column of the `films` table. Similarly, the `MAX()` function returns the highest budget:
 
 ```
 SELECT MAX(budget)
 FROM films;
 ```
 
-The `SUM` function returns the result of adding up the numeric values in a column:
+The `SUM()` function returns the result of adding up the numeric values in a column:
 
 ```
 SELECT SUM(budget)
 FROM films;
 ```
 
-You can probably guess what the `MIN` function does! Now it's your turn to try out some SQL functions.
+You can probably guess what the `MIN()` function does! Now it's your turn to try out some SQL functions.
 
 `@pre_exercise_code`
 ```{python}
@@ -52,7 +55,7 @@ xp: 25
 ```
 
 `@instructions`
-Use the `SUM` function to get the total duration of all films.
+Use the `SUM()` function to get the total duration of all films.
 
 `@hint`
 ```
@@ -233,7 +236,7 @@ xp: 25
 ```
 
 `@instructions`
-Use the `SUM` function to get the total amount grossed by all films.
+Use the `SUM()` function to get the total amount grossed by all films.
 
 `@hint`
 ```
@@ -424,7 +427,7 @@ xp: 25
 ```
 
 `@instructions`
-Use the `SUM` function to get the total amount grossed by all films made in the year 2000 or later.
+Use the `SUM()` function to get the total amount grossed by all films made in the year 2000 or later.
 
 `@hint`
 ```
@@ -598,7 +601,8 @@ type: MultipleChoiceExercise
 key: 7b8b54b64d
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 In addition to using aggregate functions, you can perform basic arithmetic with symbols like `+`, `-`, `*`, and `/`.

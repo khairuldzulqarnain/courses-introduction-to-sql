@@ -1,9 +1,14 @@
 ---
-title: 'Selecting columns'
-description: 'This chapter provides a brief introduction to working with relational databases. You''ll learn about their structure, how to talk about them using database lingo, and how to begin an analysis using simple SQL commands to select and summarize columns from database tables.'
+title: Selecting columns
+description: >-
+  This chapter provides a brief introduction to working with relational
+  databases. You'll learn about their structure, how to talk about them using
+  database lingo, and how to begin an analysis using simple SQL commands to
+  select and summarize columns from database tables.
 free_preview: true
 attachments:
-    slides_link: 'https://s3.amazonaws.com/assets.datacamp.com/production/course_1946/slides/chapter1.pdf'
+  slides_link: >-
+    https://s3.amazonaws.com/assets.datacamp.com/production/course_1946/slides/chapter1.pdf
 ---
 
 ## Welcome to the course!
@@ -13,7 +18,8 @@ type: VideoExercise
 key: dcdbb24914
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 `@projector_key`
@@ -28,10 +34,11 @@ type: MultipleChoiceExercise
 key: e456699517
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
-If you've used DataCamp to learn [R](https://www.datacamp.com/courses/free-introduction-to-r) or [Python](https://www.datacamp.com/courses/intro-to-python-for-data-science), you'll be familiar with the interface. For SQL, however, there are a few new features you should be aware of.
+The DataCamp interface for SQL courses contains a few unique features you should be aware of.
 
 For this course, you'll be using a database containing information on almost 5000 films. To the right, underneath the editor, you can see the data in this database by clicking through the tabs.
 
@@ -70,7 +77,8 @@ type: MultipleChoiceExercise
 key: 5314676aac
 lang: sql
 xp: 50
-skills: 1
+skills:
+  - 1
 ```
 
 Notice the **query result** tab in the bottom right corner of your screen. This is where the results of your SQL queries will be displayed.
@@ -117,7 +125,8 @@ type: NormalExercise
 key: 7d7e325a12
 lang: sql
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 If you submit the code to the right, you'll see that you get two types of errors.
@@ -171,17 +180,18 @@ Ex().success_msg("Excellent error editing! You can feel safe experimenting with 
 
 ---
 
-## Onboarding | Bullet Exercises
+## Onboarding | Multi-step Exercises
 
 ```yaml
 type: BulletExercise
 key: 81eb00a53d
 lang: sql
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
-Another new feature we're introducing is the *bullet exercise*, which allows you to easily practice a new concept through repetition. Check it out below!
+The following multi-step exercise allows you to practice a new concept through repetition. Check it out!
 
 `@pre_exercise_code`
 ```{python}
@@ -869,7 +879,7 @@ lang: sql
 xp: 50
 ```
 
-What if you want to count the number of employees in your employees table? The `COUNT` statement lets you do this by returning the number of rows in one or more columns.
+What if you want to count the number of employees in your employees table? The `COUNT()` function lets you do this by returning the number of rows in one or more columns.
 
 For example, this code gives the number of rows in the `people` table:
 
@@ -914,7 +924,7 @@ lang: sql
 xp: 100
 ```
 
-As you've seen, `COUNT(*)` tells you how many rows are in a table. However, if you want to count the number of *non-missing* values in a particular column, you can call `COUNT` on just that column.
+As you've seen, `COUNT(*)` tells you how many rows are in a table. However, if you want to count the number of *non-missing* values in a particular column, you can call `COUNT()` on just that column.
 
 For example, to count the number of birth dates present in the `people` table:
 
@@ -923,7 +933,7 @@ SELECT COUNT(birthdate)
 FROM people;
 ```
 
-It's also common to combine `COUNT` with `DISTINCT` to count the number of *distinct* values in a column.
+It's also common to combine `COUNT()` with `DISTINCT` to count the number of *distinct* values in a column.
 
 For example, this query counts the number of distinct birth dates contained in the `people` table:
 
@@ -932,7 +942,7 @@ SELECT COUNT(DISTINCT birthdate)
 FROM people;
 ```
 
-Let's get some practice with `COUNT`!
+Let's get some practice with `COUNT()`!
 
 `@pre_exercise_code`
 ```{python}
