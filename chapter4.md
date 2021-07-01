@@ -1,6 +1,8 @@
 ---
-title: 'Sorting and grouping'
-description: 'This chapter provides a brief introduction to sorting and grouping your results.'
+title: Sorting and grouping
+description: >-
+  This chapter provides a brief introduction to sorting and grouping your
+  results.
 ---
 
 ## ORDER BY
@@ -1677,7 +1679,8 @@ type: NormalExercise
 key: 0bbc6da34d
 lang: sql
 xp: 100
-skills: 1
+skills:
+  - 1
 ```
 
 Great work! Now try another large query. This time, all in one go!
