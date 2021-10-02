@@ -1853,6 +1853,12 @@ xp: 50
 ```
 
 `@question`
+Here is the result of your last query that joined the `films` and `reviews` tables:
+
+| title                 | imdb_score |
+|-----------------------|------------|
+| To Kill a Mockingbird | 8.4        |
+
 What is the IMDB score for the film _To Kill a Mockingbird_?
 
 `@sample_code`
@@ -1867,11 +1873,11 @@ What is the IMDB score for the film _To Kill a Mockingbird_?
 - 9.3
 
 `@hint`
-Look at the query result tab!
+Look at the query result in the instructions!
 
 `@sct`
 ```{python}
 icm = 'Have another look at the result of the query you just submitted. The answer is right there!'
-correct = 'Correct!'
+correct = 'Correct! To continue your SQL journey and discover the power of joins, take the Joining Data with SQL course!'
 Ex().has_chosen(2,[icm, correct, icm, icm])
 ```
