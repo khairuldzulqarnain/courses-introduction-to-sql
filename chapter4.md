@@ -1868,6 +1868,6 @@ Look at the query result tab!
 `@sct`
 ```{python}
 icm = 'Have another look at the result of the query you just submitted. The answer is right there!'
-correct = 'Correct!'
+correct = 'Correct! To continue your SQL journey and discover the power of joins, take the Joining Data with SQL course!'
 Ex().has_chosen(2,[icm, correct, icm, icm])
 ```
