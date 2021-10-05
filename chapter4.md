@@ -1854,11 +1854,11 @@ xp: 50
 
 `@question`
 Here is the result of your last query that joined the `films` and `reviews` tables:
-
+```out
 | title                 | imdb_score |
 |-----------------------|------------|
 | To Kill a Mockingbird | 8.4        |
-
+```
 What is the IMDB score for the film _To Kill a Mockingbird_?
 
 `@sample_code`
