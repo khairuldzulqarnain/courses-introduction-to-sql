@@ -1789,7 +1789,7 @@ xp: 100
 
 Congrats on making it to the end of the course! By now you should have a good understanding of the basics of SQL.
 
-There's one more concept we're going to introduce. You may have noticed that all your results so far have been from just one table, e.g. `films` or `people`.
+There's one more concept we're going to introduce. You may have noticed that all your results so far have been from just one table, e.g., `films` or `people`.
 
 In the real world however, you will often want to query multiple tables. For example, what if you want to see the IMDB score for a particular movie?
 
@@ -1799,7 +1799,7 @@ The query in the editor gets the IMDB score for the film _To Kill a Mockingbird_
 
 As you can see, joins are incredibly useful and important to understand for anyone using SQL.
 
-We have a whole follow-up course dedicated to them called <a href="https://www.datacamp.com/courses/joining-data-in-postgresql">Joining Data in PostgreSQL</a> for you to hone your database skills further!
+We have a whole follow-up course dedicated to them called <a href="https://learn.datacamp.com/courses/joining-data-in-postgresql">Joining Data in SQL</a> for you to hone your database skills further!
 
 `@pre_exercise_code`
 ```{python}
@@ -1853,6 +1853,12 @@ xp: 50
 ```
 
 `@question`
+Here is the result of your last query that joined the `films` and `reviews` tables:
+```out
+| title                 | imdb_score |
+|-----------------------|------------|
+| To Kill a Mockingbird | 8.4        |
+```
 What is the IMDB score for the film _To Kill a Mockingbird_?
 
 `@sample_code`
@@ -1867,11 +1873,11 @@ What is the IMDB score for the film _To Kill a Mockingbird_?
 - 9.3
 
 `@hint`
-Look at the query result tab!
+Look at the query result in the instructions!
 
 `@sct`
 ```{python}
 icm = 'Have another look at the result of the query you just submitted. The answer is right there!'
-correct = 'Correct!'
+correct = 'Correct! To continue your SQL journey and discover the power of joins, take the Joining Data with SQL course!'
 Ex().has_chosen(2,[icm, correct, icm, icm])
 ```
