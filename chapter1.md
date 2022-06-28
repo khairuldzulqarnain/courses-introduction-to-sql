@@ -13,7 +13,7 @@ lessons:
   - nb_of_exercises: 5
     title: Welcome to the course!
   - nb_of_exercises: 4
-    title: SELECTing colums
+    title: SELECTing columns
   - nb_of_exercises: 2
     title: Learning to COUNT
 ---
