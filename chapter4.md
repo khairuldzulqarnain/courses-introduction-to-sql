@@ -3,6 +3,13 @@ title: Sorting and grouping
 description: >-
   This chapter provides a brief introduction to sorting and grouping your
   results.
+lessons:
+  - nb_of_exercises: 5
+    title: Sorting
+  - nb_of_exercises: 4
+    title: Grouping
+  - nb_of_exercises: 3
+    title: Bringing it all together
 ---
 
 ## ORDER BY
