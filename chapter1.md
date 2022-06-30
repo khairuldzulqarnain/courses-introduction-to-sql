@@ -9,6 +9,13 @@ free_preview: true
 attachments:
   slides_link: >-
     https://s3.amazonaws.com/assets.datacamp.com/production/course_1946/slides/chapter1.pdf
+lessons:
+  - nb_of_exercises: 5
+    title: Welcome to the course!
+  - nb_of_exercises: 4
+    title: SELECTing columns
+  - nb_of_exercises: 2
+    title: Learning to COUNT
 ---
 
 ## Welcome to the course!
