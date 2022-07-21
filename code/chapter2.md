@@ -240,6 +240,13 @@ FROM films
 WHERE release_year BETWEEN 2000 AND 2015
 AND duration > 120;
 ```
+### EXERCISE : WHERE
+Get the title and certification of all films with an NC-17 or R certification.
+
+SELECT title, certification
+FROM films
+WHERE certification IN('NC-17', 'R')
+
 
 ### EXERCISE: IS NULL
 Get the names of people who are still alive.
@@ -287,3 +294,4 @@ SELECT name
 FROM people
 WHERE name NOT LIKE 'A%';
 ```
+
